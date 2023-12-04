@@ -12,32 +12,46 @@
 </head>
 
 <body class="font-serif bg-neutral-100">
-    <div class="bg-teal-950 flex justify-between px-20 py-5">
-        <div class="flex gap-3">
-            <img class="w-[50px] h-[40px]" src="assets/Group (2).png">
-            <img class="w-[100px] h-[30px] mt-2" src="assets/Group 15.png">
-        </div>
 
-        <ul class="flex text-2xl text-white font-bold">
-            <li class="px-10"><a href="#">Home</a></li>
-            <li class="px-10 text-gray-400"><a href="#">About Us</a></li>
-            <li class="px-10 text-gray-400"><a href="#">Trending</a></li>
-        </ul>
+    <!-- section one -->
 
-        <img class="w-[30px]" src="assets/􀍣.png">
-    </div>
+    <header>
+        <nav>
+            <div class="bg-teal-950 flex justify-between px-20 py-5">
+                <div class="flex pl-32 md:pl-0 gap-3">
+                    <img class="md:w-[50px] w-[60px] md:h-[40px] h-[50px]" src="assets/Group (2).png">
+                    <img class="md:w-[100px] w-[120px] md:h-[30px] h-[40px] mt-2" src="assets/Group 15.png">
+                </div>
+
+                <i id="menu-icon" class="fa-solid cursor-pointer md:hidden absolute left-4 text-5xl text-white top-6 fa-bars"></i>
+                <i id="close-icon" class="fa-solid cursor-pointer md:hidden hidden absolute left-4 text-5xl text-white top-6 fa-xmark"></i>
+
+                <div class="md:absolute md:right-[500px]">
+                    <ul class="md:flex hidden absolute w-[760px] top-12 md:top-[-35px] left-0 md:left-[-620px] sm:left-[300px] text-2xl text-white font-bold">
+                        <li class="md:px-10 bg-teal-950 px-[80px] pt-10 pb-2  hover:text-white"><a href="#">Home</a></li>
+                        <li class="md:px-10 bg-teal-950 px-[80px] pt-10 pb-2  hover:text-white text-gray-400"><a href="#">About Us</a></li>
+                        <li class="md:px-10 bg-teal-950 px-[80px] pt-10 pb-2  hover:text-white text-gray-400"><a href="#">Trending</a></li>
+                    </ul>
+                </div>
+
+                <div class="absolute right-4 md:right-10  top-6">
+                    <img class="md:w-[30px] w-[40px]" src="assets/􀍣.png">
+                </div>
+            </div>
+        </nav>
+    </header>
 
     <!-- section two -->
 
-    <div class="flex justify-center gap-[300px] bg-fuchsia-900 w-[1620px] h-[350px] mx-10 my-16 rounded-3xl">
-        <div class="pt-20">
-            <h1 class="text-6xl text-white pb-8">Apple Store</h1>
-            <p class="text-xl text-white pb-8 font-light">Find the Apple product and <br> accessories you're looking for
+    <div class="flex justify-center md:gap-[300px] gap-[130px] bg-fuchsia-900 md:w-[1620px] md:h-[350px] h-[250px] mx-10 my-16 rounded-3xl">
+        <div class="md:pt-20 pt-16">
+            <h1 class="md:text-6xl text-3xl text-white md:pb-8 pb-5">Apple Store</h1>
+            <p class="md:text-xl text-white md:pb-8 pb-5 font-light">Find the Apple product and <br> accessories you're looking for
             </p>
-            <h4 class="text-xl text-fuchsia-400 pb-8 font-light">Shop new Year</h4>
+            <h4 class="md:text-xl text-fuchsia-400 md:pb-8 pb-5 font-light">Shop new Year</h4>
         </div>
         <div>
-            <img class="w-[250px]" src="assets/image 1 (1).png">
+            <img class="md:w-[250px] w-[180px]" src="assets/image 1 (1).png">
         </div>
     </div>
 
@@ -297,6 +311,7 @@
     </div>
 
 
+    <script src="main.js"></script>
 </body>
 
 </html>
