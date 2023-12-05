@@ -17,3 +17,33 @@ closeIcon.addEventListener("click", function() {
     ulList.style.display = "none"
 
 })
+
+// banner image changed 5 sec
+
+document.addEventListener("DOMContentLoaded", function () {
+            // Array of image URLs
+            const imageUrls = [
+                'assets/Rectangle 7 (7).png',
+                'assets/Rectangle 7 (8).png',
+                'assets/MTJV3.png',
+                'assets/MT253.png',
+                'assets/Rectangle 7 (4).png',
+                'assets/Rectangle 7 (6).png',
+                // Add more image URLs as needed
+            ];
+
+            // Get the image element
+            const imageElement = document.getElementById('changeableImage');
+
+            // Function to change the image
+            function changeImage() {
+                // Get a random index to select a random image from the array
+                const randomIndex = Math.floor(Math.random() * imageUrls.length);
+
+                // Set the new image source
+                imageElement.src = imageUrls[randomIndex];
+            }
+
+            // Change the image every 5 seconds in a loop
+            setInterval(changeImage, 5000);
+        });
