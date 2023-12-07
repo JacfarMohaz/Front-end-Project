@@ -41,8 +41,11 @@
                     </ul>
                 </div>
 
-                <div class="absolute right-4 md:right-10  top-6">
-                    <img class="md:w-[30px] w-[40px]" src="assets/􀍣.png">
+                <div class="absolute right-4 md:right-16  top-2">
+                    <a class="flex gap-3" href="addCard.htmlb">
+                        <i class="fa-solid text-4xl pt-4 text-white fa-cart-shopping"></i>
+                        <p id="product-count" class="text-4xl text-white font-bold font-mono my-4">0</p>
+                    </a>
                 </div>
             </div>
         </nav>
@@ -51,17 +54,16 @@
 
     <!-- section two -->
 
-        <div id="card"
-            class=" flex w-[520px] h-[120px] mt-20 md:ml-48 ml-10 mb-20 pt-2 bg-white rounded-md">
-            <div class="w-[120px] h-[100px] mx-2  bg-sky-50 rounded-md">
-                <img class="w-[70px]  ml-4 pt-3" src="assets/Rectangle 7 (4).png">
-            </div>
-            <div>
-                <h1 class="text-xl font-bold pt-5 pl-3 pb-2">AirPods Max</h1>
-                <h4 class="text-xl pt-2 pl-2  font-bold">$199.99</h4>
-            </div>
-            <i id="delete-icon" class="fa-solid pl-40 pt-8 text-4xl fa-trash"></i>
-        </div>
+    <div id="product-list">
+        
+        <ul id="cart" class="space-y-4">
+            <!-- Cart items will be added dynamically here -->
+        </ul>
+
+
+        <hr class="border md:w-[1350px] w-[620px] border-gray-600 mt-80 md:ml-[180px] ml-10">
+        <p id="total-price" class="text-4xl font-bold mt-10 ml-[250px]">Total Price: $0.00</p>
+    </div>
 
 
     <!-- section three -->

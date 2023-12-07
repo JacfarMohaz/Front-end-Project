@@ -49,11 +49,56 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 
-const deleteIcon = document.querySelector("#delete-icon")
-const card = document.querySelector("#card")
-
-deleteIcon.addEventListener("click", () => {
-    card.style.display = "none"
+// add card
+// Sample product data with images
+const products = [
+    { name: 'AirPods Max', price: 199.99, imageUrl: 'assets/Rectangle 7 (4).png' },
     
-})
+    // Add more products as needed
+];
+
+// Cart to store selected items
+const cart = [];
+
+// Function to add an item to the cart
+function addToCart(productName, productPrice) {
+    const item = { name: productName, price: productPrice };
+    cart.push(item);
+    updateCart();
+}
+
+// Function to remove an item from the cart
+function removeFromCart(index) {
+    cart.splice(index, 1);
+    updateCart();
+}
+
+// Function to update the cart display
+function updateCart() {
+    const cartList = document.getElementById('cart');
+    const totalPriceElement = document.getElementById('total-price');
+    const productCountElement = document.getElementById('product-count');
+
+    // Clear existing items in the cart
+    cartList.innerHTML = '';
+
+    // Add each item to the cart
+    cart.forEach((item, index) => {
+        const li = document.createElement('li');
+        li.className = 'bg-white p-4 rounded shadow flex justify-between items-center';
+        li.innerHTML = `
+            <img src="${products[index].imageUrl}" alt="${item.name}" class="mr-2 rounded" style="max-width: 50px;">
+            <span>${item.name} - $${item.price.toFixed(2)}</span>
+            <button onclick="removeFromCart(${index})" class="text-red-500">Remove</button>
+        `;
+        cartList.appendChild(li);
+    });
+
+    // Calculate total price
+    const totalPrice = cart.reduce((sum, item) => sum + item.price, 0).toFixed(2);
+    totalPriceElement.textContent = `Total Price: $${totalPrice}`;
+
+    // Update product count
+    productCountElement.textContent = `Product Count: ${cart.length}`;
+}
 
