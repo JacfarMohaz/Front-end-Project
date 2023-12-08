@@ -49,11 +49,34 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 
+// contact form validation
+
+// Form validation
+(function () {
+    'use strict';
+
+    const form = document.getElementById('contact-form');
+
+    form.addEventListener('submit', function (event) {
+        if (form.checkValidity() === false) {
+            event.preventDefault();
+            event.stopPropagation();
+        }
+
+        form.classList.add('was-validated');
+
+        // Clear inputs
+        form.reset();
+    }, false);
+})();
+
+
+
 // add card
 // Sample product data with images
 const products = [
     { name: 'AirPods Max', price: 199.99, imageUrl: 'assets/Rectangle 7 (4).png' },
-    
+
     // Add more products as needed
 ];
 
