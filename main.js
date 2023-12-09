@@ -18,6 +18,18 @@ closeIcon.addEventListener("click", function () {
 
 })
 
+// active ul
+
+
+// Define routes
+page('/', updateActiveState);
+page('/about', updateActiveState);
+page('/contact', updateActiveState);
+
+// Start page.js
+page();
+
+
 // banner image changed 5 sec
 
 document.addEventListener("DOMContentLoaded", function () {
@@ -45,13 +57,12 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     // Change the image every 5 seconds in a loop
-    setInterval(changeImage, 5000);
+    setInterval(changeImage, 3000);
 });
 
 
 // contact form validation
 
-// Form validation
 (function () {
     'use strict';
 
@@ -69,7 +80,6 @@ document.addEventListener("DOMContentLoaded", function () {
         form.reset();
     }, false);
 })();
-
 
 
 // add card

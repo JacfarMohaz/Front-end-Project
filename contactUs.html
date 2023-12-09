@@ -123,22 +123,20 @@
 
     <form id="contact-form" class="needs-validation">
         <div class="border border-gray-400 md:w-[1400px] w-[530px] rounded-xl h-[700px] md:ml-40 ml-5 mt-20">
-            <input id="name"
-                class="bg-gray-200 focus:bg-transparent md:w-[600px] w-[230px] outline-teal-950 h-16 p-4 rounded-lg mt-16 md:ml-16 ml-4"
-                type="text" placeholder="Name">
-            <input id="email"
-                class="bg-gray-200 focus:bg-transparent md:w-[600px] w-[230px] outline-teal-950 h-16 p-4 rounded-lg mt-16 md:ml-16 ml-4"
-                type="email" placeholder="Eamil">
-            <input id="phone"
-                class="bg-gray-200 focus:bg-transparent md:w-[600px] w-[230px] outline-teal-950 h-16 p-4 rounded-lg mt-16 md:ml-16 ml-4"
-                type="phone" placeholder="Phone">
-            <input id="subject"
-                class="bg-gray-200 focus:bg-transparent md:w-[600px] w-[230px] outline-teal-950 h-16 p-4 rounded-lg mt-16 md:ml-16 ml-4"
-                type="text" placeholder="Subject">
-            <textarea id="message" cols="30" rows="10"
-                class="bg-gray-200 focus:bg-transparent md:w-[1250px] w-[440px] outline-teal-950 mt-16 md:ml-16 ml-4 rounded-lg"></textarea>
-            <button type="submit"
-                class="md:w-[600px] w-[430px] py-6 md:ml-[400px] ml-10 bg-teal-950 text-white text-2xl rounded-3xl md:mt-5 mt-6">Submit</button>
+                <input type="text" name="name" id="name" class="bg-gray-200 focus:bg-transparent md:w-[600px] w-[230px] outline-teal-950 h-16 p-4 rounded-lg mt-16 md:ml-16 ml-4"
+                    required placeholder="Name">
+
+                <input type="email" name="email" id="email" class="bg-gray-200 focus:bg-transparent md:w-[600px] w-[230px] outline-teal-950 h-16 p-4 rounded-lg mt-16 md:ml-16 ml-4" required placeholder="Eamil">
+
+                <input type="tel" name="phone" id="phone" class="bg-gray-200 focus:bg-transparent md:w-[600px] w-[230px] outline-teal-950 h-16 p-4 rounded-lg mt-16 md:ml-16 ml-4" required placeholder="Phone">
+
+                <input type="text" name="subject" id="subject" class="bg-gray-200 focus:bg-transparent md:w-[600px] w-[230px] outline-teal-950 h-16 p-4 rounded-lg mt-16 md:ml-16 ml-4"
+                    required placeholder="Subject">
+
+                <textarea cols="30" rows="10" name="message" id="message" class="bg-gray-200 p-4 focus:bg-transparent md:w-[1250px] w-[440px] outline-teal-950 mt-12 md:ml-16 ml-4 rounded-lg"
+                    required placeholder="Message"></textarea>
+
+                <button type="submit" class="md:w-[600px] w-[430px] py-6 md:ml-[400px] ml-10 bg-teal-950 text-white text-2xl rounded-3xl md:mt-5 mt-6">Submit</button>
         </div>
     </form>
 
