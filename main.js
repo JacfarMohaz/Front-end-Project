@@ -1,6 +1,7 @@
 const menuIcon = document.querySelector("#menu-icon")
 const closeIcon = document.querySelector("#close-icon")
 const ulList = document.querySelector("ul")
+const banner = document.querySelector("#banner")
 
 menuIcon.addEventListener("click", function () {
     menuIcon.style.display = "none"
@@ -16,18 +17,17 @@ closeIcon.addEventListener("click", function () {
     closeIcon.style.display = "none"
     ulList.style.display = "none"
 
+
+})
+
+banner.addEventListener("click", () => {
+    menuIcon.style.display = "block"
+    closeIcon.style.display = "none"
+    ulList.style.display = "none"
 })
 
 // active ul
 
-
-// Define routes
-page('/', updateActiveState);
-page('/about', updateActiveState);
-page('/contact', updateActiveState);
-
-// Start page.js
-page();
 
 
 // banner image changed 5 sec
@@ -57,8 +57,26 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     // Change the image every 5 seconds in a loop
-    setInterval(changeImage, 3000);
+    setInterval(changeImage, 1000);
 });
+
+
+// text color changed
+
+// document.addEventListener('DOMContentLoaded', function () {
+//     const textContainer = document.getElementById('textContainer');
+//     const colors = ['text-white', 'text-black', 'text-red-500']; // Add your desired colors here
+//     let currentIndex = 0;
+
+//     function changeColor() {
+//         currentIndex = (currentIndex + 1) % colors.length;
+//         textContainer.className = `md:text-4xl text-xl md:ml-0  font-bold pt-11 transition duration-300 ease-in-out ${colors[currentIndex]}`;
+//         setTimeout(changeColor, 1000); // Change color every 10 seconds
+//     }
+
+//     // Initial call to start the color-changing loop
+//     changeColor();
+// });
 
 
 // contact form validation
@@ -80,58 +98,3 @@ document.addEventListener("DOMContentLoaded", function () {
         form.reset();
     }, false);
 })();
-
-
-// add card
-// Sample product data with images
-const products = [
-    { name: 'AirPods Max', price: 199.99, imageUrl: 'assets/Rectangle 7 (4).png' },
-
-    // Add more products as needed
-];
-
-// Cart to store selected items
-const cart = [];
-
-// Function to add an item to the cart
-function addToCart(productName, productPrice) {
-    const item = { name: productName, price: productPrice };
-    cart.push(item);
-    updateCart();
-}
-
-// Function to remove an item from the cart
-function removeFromCart(index) {
-    cart.splice(index, 1);
-    updateCart();
-}
-
-// Function to update the cart display
-function updateCart() {
-    const cartList = document.getElementById('cart');
-    const totalPriceElement = document.getElementById('total-price');
-    const productCountElement = document.getElementById('product-count');
-
-    // Clear existing items in the cart
-    cartList.innerHTML = '';
-
-    // Add each item to the cart
-    cart.forEach((item, index) => {
-        const li = document.createElement('li');
-        li.className = 'bg-white p-4 rounded shadow flex justify-between items-center';
-        li.innerHTML = `
-            <img src="${products[index].imageUrl}" alt="${item.name}" class="mr-2 rounded" style="max-width: 50px;">
-            <span>${item.name} - $${item.price.toFixed(2)}</span>
-            <button onclick="removeFromCart(${index})" class="text-red-500">Remove</button>
-        `;
-        cartList.appendChild(li);
-    });
-
-    // Calculate total price
-    const totalPrice = cart.reduce((sum, item) => sum + item.price, 0).toFixed(2);
-    totalPriceElement.textContent = `Total Price: $${totalPrice}`;
-
-    // Update product count
-    productCountElement.textContent = `Product Count: ${cart.length}`;
-}
-
